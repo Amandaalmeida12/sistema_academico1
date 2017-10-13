@@ -52,9 +52,9 @@ class ProfessorTable extends Table
             ->allowEmpty('id_professor', 'create');
 
         $validator
-            ->scalar('nome')
-            ->requirePresence('nome', 'create')
-            ->notEmpty('nome');
+            ->scalar('name')
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
 
         $validator
             ->scalar('siape')

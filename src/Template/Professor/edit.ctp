@@ -20,7 +20,7 @@
     <fieldset>
         <legend><?= __('Edit Professor') ?></legend>
         <?php
-            echo $this->Form->control('nome');
+            echo $this->Form->control('name');
             echo $this->Form->control('siape');
         ?>
     </fieldset>

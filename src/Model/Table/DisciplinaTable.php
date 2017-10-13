@@ -48,9 +48,9 @@ class DisciplinaTable extends Table
             ->allowEmpty('id_disciplina', 'create');
 
         $validator
-            ->scalar('titulo')
-            ->requirePresence('titulo', 'create')
-            ->notEmpty('titulo');
+            ->scalar('name')
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
 
         $validator
             ->scalar('descricao')

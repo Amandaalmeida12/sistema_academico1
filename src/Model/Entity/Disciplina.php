@@ -7,7 +7,7 @@ use Cake\ORM\Entity;
  * Disciplina Entity
  *
  * @property int $id_disciplina
- * @property string $titulo
+ * @property string $name
  * @property string $descricao
  */
 class Disciplina extends Entity
@@ -23,7 +23,7 @@ class Disciplina extends Entity
      * @var array
      */
     protected $_accessible = [
-        'titulo' => true,
+        'name' => true,
         'descricao' => true
     ];
 }

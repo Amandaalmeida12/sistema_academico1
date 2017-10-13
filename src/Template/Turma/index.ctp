@@ -17,8 +17,8 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id_turma') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('semeste') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('id_professor') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('id_disciplina') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('professor_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('disciplina_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -27,8 +27,8 @@
             <tr>
                 <td><?= $this->Number->format($turma->id_turma) ?></td>
                 <td><?= h($turma->semeste) ?></td>
-                <td><?= $this->Number->format($turma->id_professor) ?></td>
-                <td><?= $this->Number->format($turma->id_disciplina) ?></td>
+                <td><?= $this->Number->format($turma->professor_id) ?></td>
+                <td><?= $this->Number->format($turma->disciplina_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $turma->id_turma]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $turma->id_turma]) ?>

@@ -9,6 +9,9 @@ use Cake\Validation\Validator;
 /**
  * Turma Model
  *
+ * @property |\Cake\ORM\Association\BelongsTo $Professor
+ * @property |\Cake\ORM\Association\BelongsTo $Disciplina
+ *
  * @method \App\Model\Entity\Turma get($primaryKey, $options = [])
  * @method \App\Model\Entity\Turma newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Turma[] newEntities(array $data, array $options = [])
@@ -33,6 +36,15 @@ class TurmaTable extends Table
         $this->setTable('turma');
         $this->setDisplayField('id_turma');
         $this->setPrimaryKey('id_turma');
+
+        $this->belongsTo('Professor', [
+            'foreignKey' => 'professor_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Disciplina', [
+            'foreignKey' => 'disciplina_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
@@ -52,16 +64,21 @@ class TurmaTable extends Table
             ->requirePresence('semeste', 'create')
             ->notEmpty('semeste');
 
-        $validator
-            ->integer('id_professor')
-            ->requirePresence('id_professor', 'create')
-            ->notEmpty('id_professor');
-
-        $validator
-            ->integer('id_disciplina')
-            ->requirePresence('id_disciplina', 'create')
-            ->notEmpty('id_disciplina');
-
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['professor_id'], 'Professor'));
+        $rules->add($rules->existsIn(['disciplina_id'], 'Disciplina'));
+
+        return $rules;
     }
 }

@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `disciplina`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `disciplina` (
-  `id_disciplina` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(100) NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
   `descricao` text NOT NULL,
-  PRIMARY KEY (`id_disciplina`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -47,12 +47,12 @@ DROP TABLE IF EXISTS `professor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `professor` (
-  `id_professor` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
   `siape` varchar(20) NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id_professor`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -73,15 +73,15 @@ DROP TABLE IF EXISTS `turma`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `turma` (
-  `id_turma` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `semeste` varchar(10) NOT NULL,
-  `id_professor` int(10) unsigned NOT NULL,
-  `id_disciplina` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id_turma`),
-  KEY `fk_turma_professor` (`id_professor`),
-  KEY `fk_turma_disciplina` (`id_disciplina`),
-  CONSTRAINT `fk_turma_disciplina` FOREIGN KEY (`id_disciplina`) REFERENCES `disciplina` (`id_disciplina`),
-  CONSTRAINT `fk_turma_professor` FOREIGN KEY (`id_professor`) REFERENCES `professor` (`id_professor`)
+  `professor_id` int(10) unsigned NOT NULL,
+  `disciplina_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_turma_professor` (`professor_id`),
+  KEY `fk_turma_disciplina` (`disciplina_id`),
+  CONSTRAINT `fk_turma_disciplina` FOREIGN KEY (`disciplina_id`) REFERENCES `disciplina` (`id`),
+  CONSTRAINT `fk_turma_professor` FOREIGN KEY (`professor_id`) REFERENCES `professor` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

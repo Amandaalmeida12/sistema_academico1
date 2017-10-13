@@ -7,7 +7,7 @@ use Cake\ORM\Entity;
  * Professor Entity
  *
  * @property int $id_professor
- * @property string $nome
+ * @property string $name
  * @property string $siape
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
@@ -25,7 +25,7 @@ class Professor extends Entity
      * @var array
      */
     protected $_accessible = [
-        'nome' => true,
+        'name' => true,
         'siape' => true,
         'created' => true,
         'modified' => true

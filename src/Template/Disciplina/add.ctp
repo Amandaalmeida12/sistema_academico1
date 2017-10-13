@@ -14,7 +14,7 @@
     <fieldset>
         <legend><?= __('Add Disciplina') ?></legend>
         <?php
-            echo $this->Form->control('titulo');
+            echo $this->Form->control('name');
             echo $this->Form->control('descricao');
         ?>
     </fieldset>

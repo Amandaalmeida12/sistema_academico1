@@ -17,8 +17,8 @@
     <h3><?= h($professor->id_professor) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Nome') ?></th>
-            <td><?= h($professor->nome) ?></td>
+            <th scope="row"><?= __('Name') ?></th>
+            <td><?= h($professor->name) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Siape') ?></th>

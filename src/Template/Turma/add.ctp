@@ -15,8 +15,8 @@
         <legend><?= __('Add Turma') ?></legend>
         <?php
             echo $this->Form->control('semeste');
-            echo $this->Form->control('id_professor');
-            echo $this->Form->control('id_disciplina');
+            echo $this->Form->control('professor_id');
+            echo $this->Form->control('disciplina_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

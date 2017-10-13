@@ -20,7 +20,7 @@
     <fieldset>
         <legend><?= __('Edit Disciplina') ?></legend>
         <?php
-            echo $this->Form->control('titulo');
+            echo $this->Form->control('name');
             echo $this->Form->control('descricao');
         ?>
     </fieldset>

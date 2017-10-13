@@ -16,7 +16,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id_professor') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('nome') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('siape') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
@@ -27,7 +27,7 @@
             <?php foreach ($professor as $professor): ?>
             <tr>
                 <td><?= $this->Number->format($professor->id_professor) ?></td>
-                <td><?= h($professor->nome) ?></td>
+                <td><?= h($professor->name) ?></td>
                 <td><?= h($professor->siape) ?></td>
                 <td><?= h($professor->created) ?></td>
                 <td><?= h($professor->modified) ?></td>

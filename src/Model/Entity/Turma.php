@@ -8,8 +8,8 @@ use Cake\ORM\Entity;
  *
  * @property int $id_turma
  * @property string $semeste
- * @property int $id_professor
- * @property int $id_disciplina
+ * @property int $professor_id
+ * @property int $disciplina_id
  */
 class Turma extends Entity
 {
@@ -25,7 +25,7 @@ class Turma extends Entity
      */
     protected $_accessible = [
         'semeste' => true,
-        'id_professor' => true,
-        'id_disciplina' => true
+        'professor_id' => true,
+        'disciplina_id' => true
     ];
 }

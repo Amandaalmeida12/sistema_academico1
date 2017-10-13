@@ -25,12 +25,12 @@
             <td><?= $this->Number->format($turma->id_turma) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id Professor') ?></th>
-            <td><?= $this->Number->format($turma->id_professor) ?></td>
+            <th scope="row"><?= __('Professor Id') ?></th>
+            <td><?= $this->Number->format($turma->professor_id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id Disciplina') ?></th>
-            <td><?= $this->Number->format($turma->id_disciplina) ?></td>
+            <th scope="row"><?= __('Disciplina Id') ?></th>
+            <td><?= $this->Number->format($turma->disciplina_id) ?></td>
         </tr>
     </table>
 </div>

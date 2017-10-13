@@ -17,8 +17,8 @@
     <h3><?= h($disciplina->id_disciplina) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Titulo') ?></th>
-            <td><?= h($disciplina->titulo) ?></td>
+            <th scope="row"><?= __('Name') ?></th>
+            <td><?= h($disciplina->name) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id Disciplina') ?></th>
